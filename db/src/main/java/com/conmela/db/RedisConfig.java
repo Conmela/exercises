@@ -22,6 +22,11 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Configuration
 public class RedisConfig {
 
+    /**
+     * redis存储对象
+     * @param redisConnectionFactory 链接工厂
+     * @return RedisTemplate<String,Object>
+     */
     @Bean
     public RedisTemplate<String,Object> template(RedisConnectionFactory redisConnectionFactory){
         RedisTemplate<String,Object> template = new RedisTemplate<>();
