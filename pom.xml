@@ -28,6 +28,8 @@
         <text.version>2.3.0.RELEASE</text.version>
         <junit.version>5.6.2</junit.version>
         <maven.plugin.version>2.3.0.RELEASE</maven.plugin.version>
+        <swagger2.version>2.9.2</swagger2.version>
+        <lastVersion>1.9.6</lastVersion>
     </properties>
 
     <dependencyManagement>
@@ -36,6 +38,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-jpa</artifactId>
                 <version>${spring.jpa.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${lastVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
