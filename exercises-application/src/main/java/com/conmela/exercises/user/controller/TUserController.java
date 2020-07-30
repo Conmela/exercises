@@ -1,7 +1,7 @@
-package com.conmela.exercises.controller;
+package com.conmela.exercises.user.controller;
 
-import com.conmela.exercises.entity.TUser;
-import com.conmela.exercises.service.TUserService;
+import com.conmela.exercises.user.service.dto.TUserDTO;
+import com.conmela.exercises.user.service.TUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -15,7 +15,7 @@ import java.util.List;
  * (TUser)表控制层
  *
  * @author ysq
- * @since 2020/07/24
+ * @since 2020/07/28
  */
 @Api("(TUser)服务")
 @RestController
@@ -24,14 +24,14 @@ public class TUserController {
 
     @Autowired
     private TUserService tUserService;
-    
+
     @PostMapping("")
     @ApiOperation(value = "创建", notes = "创建")
     @ApiImplicitParam(name = "tUser", value = "", dataType = "TUser", required = true, paramType = "body" )
-    public TUser createTUser(@RequestBody TUser tUser){
+    public TUserDTO createTUser(@RequestBody TUserDTO tUser){
         return tUserService.createTUser(tUser);
     }
-    
+
     @DeleteMapping("/{id}")
     @ApiOperation(value = "删除", notes = "删除")
     @ApiImplicitParams(value = {
@@ -43,7 +43,7 @@ public class TUserController {
 
     @GetMapping("")
     @ApiOperation(value = "获取列表", notes = "获取列表")
-    public List<TUser> listTUsers(){
+    public List<TUserDTO> listTUsers(){
         return tUserService.listTUsers();
     }
 
@@ -52,7 +52,7 @@ public class TUserController {
     @ApiImplicitParams(value = {
             @ApiImplicitParam(name = "id", value = "id", dataType = "Integer", required = true, paramType = "path")
     })
-    public TUser getTUser(@PathVariable Integer id){
+    public TUserDTO getTUser(@PathVariable Integer id){
         return tUserService.getTUser(id);
     }
 
@@ -62,7 +62,7 @@ public class TUserController {
             @ApiImplicitParam(name = "id", value = "id", dataType = "Integer", required = true, paramType = "path"),
             @ApiImplicitParam(name = "tUser", value = "", dataType = "TUser", required = true, paramType = "body")
     })
-    public TUser updateTUser(@PathVariable Integer id, @RequestBody TUser tUser){
+    public TUserDTO updateTUser(@PathVariable Integer id, @RequestBody TUserDTO tUser){
         return tUserService.updateTUser(id, tUser);
     }
 

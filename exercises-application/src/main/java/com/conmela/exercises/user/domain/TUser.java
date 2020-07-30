@@ -1,26 +1,25 @@
-package com.conmela.exercises.entity;
+package com.conmela.exercises.user.domain;
 
 
 import java.util.Date;
 import lombok.Data;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
+import io.swagger.annotations.ApiModel;
+
+import javax.persistence.*;
 
 /**
  * (TUser)实体类
  *
  * @author ysq
- * @since 2020/07/24
+ * @since 2020/07/28
  */
 @Data
 @Entity
-@Table(name = "t_User")
+@Table(name = "tUser")
 public class TUser {
-    /**
-     * ${pk.comment}
-     */
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
 

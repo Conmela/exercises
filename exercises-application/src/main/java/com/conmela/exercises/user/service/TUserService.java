@@ -1,13 +1,13 @@
-package com.conmela.exercises.service;
+package com.conmela.exercises.user.service;
 
-import com.conmela.exercises.entity.TUser;
+import com.conmela.exercises.user.service.dto.TUserDTO;
 import java.util.List;
 
 /**
  * (TUser)表服务接口
  *
  * @author ysq
- * @since 2020/07/24
+ * @since 2020/07/28
  */
 public interface TUserService {
     /**
@@ -16,7 +16,7 @@ public interface TUserService {
      * @param tUser 
      * @return 
      */
-    TUser createTUser(TUser tUser);
+    TUserDTO createTUser(TUserDTO tUser);
 
     /**
      * 删除
@@ -30,7 +30,7 @@ public interface TUserService {
      *
      * @return 列表
      */
-    List<TUser> listTUsers();
+    List<TUserDTO> listTUsers();
 
     /**
      * 获取
@@ -38,15 +38,15 @@ public interface TUserService {
      * @param id 的
      * @return 
      */
-    TUser getTUser(Integer id);
+    TUserDTO getTUser(Integer id);
     
     /**
      * 更新
      *
      * @param id 的
-     * @param tUser 
+     * @param tUserDTO 
      * @return 
      */
-    TUser updateTUser(Integer id, TUser tUser);
+    TUserDTO updateTUser(Integer id, TUserDTO tUser);
 
 }
