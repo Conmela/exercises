@@ -1,4 +1,4 @@
-package com.conmela.exercises.config;
+package com.conmela.exercises.config.swagger;
 
 import io.swagger.annotations.ApiModel;
 import org.springframework.context.annotation.Bean;
